@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cuenta</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <button id="showSignupFormButton">Crear Cuenta</button>
+        <button id="showLoginFormButton">Iniciar Sesión</button>
+
+        <!-- Formulario de registro -->
+        <div id="signupForm" style="display: none;">
+            <form id="signupFormElement">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Correo:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit">Registrar</button>
+                <button type="button" id="backSignupButton">Atrás</button>
+            </form>
+        </div>
+
+        <!-- Formulario de inicio de sesión -->
+        <div id="loginForm" style="display: none;">
+            <form id="loginFormElement">
+                <label for="loginEmail">Correo:</label>
+                <input type="email" id="loginEmail" name="loginEmail" required>
+                
+                <label for="loginPassword">Contraseña:</label>
+                <input type="password" id="loginPassword" name="loginPassword" required>
+                
+                <button type="submit">Iniciar Sesión</button>
+                <button type="button" id="backLoginButton">Atrás</button>
+            </form>
+        </div>
+
+        <!-- Ventana emergente -->
+        <div id="successModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p id="modalMessage"></p>
+                <button id="acceptButton">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inicio ingreso de datos, Libros -->
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          <h1>Sección de Ingreso de Libros</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <form>
+            <legend>Agregar Libro</legend>
+            <input type="text" id="l-id" name="l-id" placeholder="ID"><br>
+            <input type="text" id="t-titu" name="t-titu" placeholder="Titulo"><br>
+            <input type="text" id="a-auto" name="a-auto" placeholder="Autor"><br>
+            <input type="text" id="e-edit" name="e-edit" placeholder="Editorial"><br>
+            <input type="text" id="a-anio" name="a-anio" placeholder="Año publicación"><br>
+            <input type="text" id="g-gen" name="g-gen" placeholder="Genero"><br>
+            <input type="button" value="Agregar" onclick="addLibro()">
+            <input type="button" value="Actualizar" onclick="updateLibro()">
+            <input type="button" value="Eliminar" onclick="deleteLibro()">
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inicio ingreso de datos, Bodegas -->
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          <h1>Sección de Ingreso de Bodegas</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <form>
+            <legend>Agregar Bodega</legend>
+            <input type="text" id="b-id" name="b-id" placeholder="ID"><br>
+            <input type="text" id="d-direc" name="d-direc" placeholder="Direccion"><br>
+            <input type="text" id="n-nombre" name="n-nombre" placeholder="Nombre"><br>
+            <textarea id="p-detalles" name="p-detalles" placeholder="Detalles De La Bodega"></textarea><br>
+            <input type="button" value="Agregar" onclick="addBodega()">
+            <input type="button" value="Actualizar" onclick="updateBodega()">
+            <input type="button" value="Eliminar" onclick="deleteBodega()">
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inicio ingreso de datos, Productos -->
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          <h1>Sección de Ingreso de Productos</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <form>
+            <legend>Agregar Producto</legend>
+            <input type="text" id="p-id" name="p-id" placeholder="ID"><br>
+            <input type="text" id="p-nombre" name="p-nombre" placeholder="Nombre"><br>
+            <input type="text" id="p-categoria" name="p-categoria" placeholder="Categoría"><br>
+            <input type="text" id="p-bodegas" name="p-bodegas" placeholder="Bodegas"><br>
+            <textarea id="p-descripcion" name="p-descripcion" placeholder="Descripción del Producto"></textarea><br>
+            <input type="button" value="Agregar" onclick="addProducto()">
+            <input type="button" value="Actualizar" onclick="updateProducto()">
+            <input type="button" value="Eliminar" onclick="deleteProducto()">
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
